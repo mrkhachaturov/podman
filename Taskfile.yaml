@@ -1,0 +1,25 @@
+---
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+version: '3'
+
+set: [pipefail]
+shopt: [globstar]
+
+vars:
+  BOOTSTRAP_DIR: '{{.ROOT_DIR}}/bootstrap'
+  SCRIPTS_DIR: '{{.ROOT_DIR}}/scripts'
+
+dotenv:
+  - '{{.ROOT_DIR}}/onepassword.env'
+
+env:
+  MINIJINJA_CONFIG_FILE: '{{.ROOT_DIR}}/.minijinja.toml'
+
+includes:
+  tower: .taskfiles/tower
+
+tasks:
+
+  default:
+    cmd: task --list
+    silent: true

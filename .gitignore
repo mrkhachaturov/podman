@@ -1,0 +1,10 @@
+/.private/
+/.task/
+/.venv/
+*.crt
+*.key
+.decrypted~*
+.DS_Store
+Brewfile.lock.json
+Thumbs.db
+onepassword.env
